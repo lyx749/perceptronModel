@@ -1,0 +1,4 @@
+Config.h和config.h.in为配置文件
+Get_data_set.hpp是获取输入输出的数据集
+Perceptron_model.hpp是感知器模型的具体实现
+Main.cpp为主函数入口
