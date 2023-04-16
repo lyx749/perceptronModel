@@ -1,0 +1,10 @@
+^C:\USERS\LYX\DESKTOP\PERCEPTRON_MODEL\BUILD\CMAKEFILES\03E95BFC70767CDE970B47DEFB8496EC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/lyx/Desktop/perceptron_model -BC:/Users/lyx/Desktop/perceptron_model/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/lyx/Desktop/perceptron_model/build/perceptron_model.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

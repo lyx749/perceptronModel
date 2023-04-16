@@ -1,0 +1,3 @@
+#pragma once
+
+#define operatingMode @operatingMode@ //#1 is or   0 is and

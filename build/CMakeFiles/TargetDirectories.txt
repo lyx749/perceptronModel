@@ -1,0 +1,9 @@
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/Experimental.dir
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/Nightly.dir
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/Continuous.dir
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/perceptron_model.dir
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/PACKAGE.dir
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/lyx/Desktop/perceptron_model/build/CMakeFiles/ZERO_CHECK.dir
