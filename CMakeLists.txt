@@ -5,7 +5,7 @@ include(CTest)
 enable_testing()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/)
 set(CMAKE_CXX_STANDARD 17)
-set(operatingMode 1) #1 is or   0 is and
+set(operatingMode 0) #1 is or   0 is and
 configure_file(config.h.in ${CMAKE_SOURCE_DIR}/src/config.h @ONLY)
 add_executable(perceptron_model main.cpp)
 

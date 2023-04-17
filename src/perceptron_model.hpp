@@ -21,17 +21,7 @@ private:
     std::vector<double> weights;
     double threshold;
 
-public:
-    perceptronModel()
-    {
-        weights.resize(layersNumber);
-        for (auto &e : weights)
-        {
-            e = getDoubleRandom(0.0, 0.0001);
-        }
-        threshold = getDoubleRandom(0.0, 0.0001);
-    }
-
+private:
     std::vector<double> feedForward(std::vector<std::pair<int, int>> input)
     {
         std::vector<double> output;
@@ -43,10 +33,9 @@ public:
         return output;
     }
 
-    bool backPropagation()
+    void backPropagation()
     {
         std::vector<double> actualOutput = feedForward(this->input);
-        bool perfectFit = true;
         std::cout << "Trainning weights[0] = " << weights[0] << " weights[1] = " << weights[1] << " threshold = " << threshold << std::endl;
         for (int i = 0; i < actualOutput.size(); ++i)
         {
@@ -57,7 +46,6 @@ public:
             {
                 std::cout << "NotMatched   " << input[i].first << " " << input[i].second << "    expected " << expectedOutput[i]
                           << "  actual " << actualOutput[i] << std::endl;
-                perfectFit = false;
                 weights[0] += error * learningRate * input[i].first;
                 weights[1] += error * learningRate * input[i].second;
                 threshold += learningRate * error;
@@ -68,19 +56,27 @@ public:
                           << "  actual " << actualOutput[i] << std::endl;
             }
         }
-        return perfectFit;
     }
 
+public:
+    perceptronModel()
+    {
+        weights.resize(layersNumber);
+        for (auto &e : weights)
+        {
+            e = getDoubleRandom(0.0, 0.0001);
+        }
+        threshold = getDoubleRandom(0.0, 0.0001);
+    }
     void train()
     {
-        bool perfectFit = false;
         int count = maxEpochs;
-        while (count-- )
+        while (count--)
         {
             inputAndOutputDataSet IO = getDataSetPtr->getSet();
             input = std::move(IO.first);
             expectedOutput = std::move(IO.second);
-            perfectFit = backPropagation();
+            backPropagation();
         }
     }
 
@@ -90,7 +86,7 @@ public:
         input = std::move(IO.first);
         expectedOutput = std::move(IO.second);
         std::vector<double> output = feedForward(this->input);
-        double conrrect = 0.0;
+        double accuracy = 0.0;
         std::cout << "Testing weights[0] = " << weights[0] << " weights[1] = " << weights[1] << " threshold = " << threshold << std::endl;
         for (int i = 0; i < output.size(); ++i)
         {
@@ -99,7 +95,7 @@ public:
                 std::cout << "Matched   " << input[i].first << " " << input[i].second << "    expected " << expectedOutput[i]
                           << "  actual " << output[i] << std::endl;
 
-                ++conrrect;
+                ++accuracy;
             }
             else
             {
@@ -108,7 +104,7 @@ public:
             }
         }
 
-        std::cout << conrrect / output.size() << std::endl;
+        std::cout << "Model accuracy " << accuracy / output.size() << std::endl;
     }
 };
 
